@@ -1,0 +1,104 @@
+\usepackage{geometry}
+\usepackage{setspace}
+
+\makeatletter
+
+\newcommand{\MyTitleA}[1]{\newcommand{\@MyTitleA}{#1}}
+\newcommand{\MyTitleB}[1]{\newcommand{\@MyTitleB}{#1}}
+\newcommand{\MyTitleC}[1]{\newcommand{\@MyTitleC}{#1}}
+\newcommand{\MyName}[1]{\newcommand{\@MyName}{#1}}
+\newcommand{\MySupervisor}[1]{\newcommand{\@MySupervisor}{#1}}
+\newcommand{\MyDegreeType}[1]{\newcommand{\@MyDegreeType}{#1}}
+\newcommand{\MonthYear}[1]{\newcommand{\@MonthYear}{#1}}
+
+\newcommand{\@PaperType}{
+\if \@MyDegreeType D A Dissertation \fi
+\if \@MyDegreeType M A Thesis \fi
+\if \@MyDegreeType B A Thesis \fi
+}
+
+\newcommand{\@Degree}{
+\if \@MyDegreeType D Doctor \fi
+\if \@MyDegreeType M Master \fi
+\if \@MyDegreeType B Bachelor \fi
+}
+
+\renewcommand{\maketitle}{
+\begin{titlepage}
+\setcounter{page}{-1}
+\pagestyle{empty}
+\newgeometry{top=35.01mm,bottom=30mm,right=30mm,left=30mm}
+\begin{center}
+
+\begin{figure}[h]
+\center
+\includegraphics[height=20mm]{./titech.jpg}
+\end{figure}
+\fontsize{16pt}{0mm}\selectfont
+{\rm Tokyo Institute of Technology}
+\vspace{10mm}
+
+\fontsize{22pt}{0mm}\selectfont
+\hrule height 1pt\hfill \\
+\vspace{8mm}
+\ifx \@MyTitleB \undefined
+\vspace{11mm}
+{\bf \@MyTitleA}
+\vspace{11mm}
+\else{
+\ifx \@MyTitleC \undefined
+\vspace{5mm}
+{\bf \@MyTitleA} \\
+\vspace{4mm}
+{\bf \@MyTitleB}
+\vspace{5mm}
+\else
+{\bf \@MyTitleA} \\
+\vspace{4mm}
+{\bf \@MyTitleB} \\
+\vspace{4mm}
+{\bf \@MyTitleC}
+\fi
+}\fi
+\vspace{8mm}
+\hrule height 1pt\hfill \\
+\vspace{10mm}
+
+\fontsize{13pt}{0mm}\selectfont
+{\rm by} \\
+\vspace{3mm}
+\fontsize{18pt}{0mm}\selectfont
+{\bf \@MyName} \\
+\vspace{4mm}
+\fontsize{13pt}{0mm}\selectfont
+{\rm Supervisor:} \\
+\vspace{3mm}
+\fontsize{18pt}{0mm}\selectfont
+{\bf Prof. \@MySupervisor} \\
+\vspace{10mm}
+
+\fontsize{12pt}{0mm}\selectfont
+{\rm \@PaperType Presented to} \\
+\vspace{5mm}
+\fontsize{16pt}{0mm}\selectfont
+{\rm Department of Information and Communications Engineering} \\
+\vspace{3mm}
+{\rm School of Engineering} \\
+\vspace{5mm}
+\fontsize{12pt}{0mm}\selectfont
+{\rm In Partial Fulfilment of} \\
+\vspace{3mm}
+{\rm the Requirements for the Degree of} \\
+\vspace{5mm}
+\fontsize{16pt}{0mm}\selectfont
+{\sl \@Degree of Engineering} \\
+\vspace{10mm}
+\fontsize{12pt}{0mm}\selectfont
+{\rm \@MonthYear}
+
+\end{center}
+\restoregeometry
+\end{titlepage}
+}
+
+\makeatother
