@@ -1,50 +1,59 @@
-# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim,tex
-# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,vim,tex
+# Created by https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim,emacs,visualstudiocode,sublimetext,latex
+# Edit at https://www.toptal.com/developers/gitignore?templates=linux,macos,windows,vim,emacs,visualstudiocode,sublimetext,latex
 
-### Linux ###
+### Emacs ###
+# -*- mode: gitignore; -*-
 *~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
 
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
+# Org-mode
+.org-id-locations
+*_archive
+ltximg/**
 
-# KDE directory preferences
-.directory
+# flymake-mode
+*_flymake.*
 
-# Linux trash folder which might appear on any partition or disk
-.Trash-*
+# eshell files
+/eshell/history
+/eshell/lastdir
 
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
+# elpa packages
+/elpa/
 
-### macOS ###
-# General
-.DS_Store
-.AppleDouble
-.LSOverride
+# reftex files
+*.rel
 
-# Icon must end with two \r
-Icon
+# AUCTeX auto folder
+/auto/
 
-# Thumbnails
-._*
+# cask packages
+.cask/
+dist/
 
-# Files that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
-.Spotlight-V100
-.TemporaryItems
-.Trashes
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
+# Flycheck
+flycheck_*.el
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
+# server auth directory
+/server/
 
-### TeX ###
+# projectiles files
+.projectile
+
+# directory configuration
+.dir-locals.el
+
+# network security
+/network-security.data
+
+
+### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -155,6 +164,9 @@ acs-*.bib
 *.glg
 *.glo
 *.gls
+*.*-glg
+*.*-glo
+*.*-gls
 *.glsdefs
 *.lzo
 *.lzs
@@ -201,6 +213,7 @@ acs-*.bib
 *.maf
 *.mlf
 *.mlt
+*.mtc
 *.mtc[0-9]*
 *.slf[0-9]*
 *.slt[0-9]*
@@ -327,12 +340,87 @@ TSWLatexianTemp*
 # Uncomment the next line to have this generated file ignored.
 #*Notes.bib
 
-### TeX Patch ###
+### LaTeX Patch ###
 # LIPIcs / OASIcs
 *.vtc
 
 # glossaries
 *.glstex
+
+### Linux ###
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### SublimeText ###
+# Cache files for Sublime Text
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+
+# Workspace files are user-specific
+*.sublime-workspace
+
+# Project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using Sublime Text
+# *.sublime-project
+
+# SFTP configuration file
+sftp-config.json
+
+# Package control specific files
+Package Control.last-run
+Package Control.ca-list
+Package Control.ca-bundle
+Package Control.system-ca-bundle
+Package Control.cache/
+Package Control.ca-certs/
+Package Control.merged-ca-bundle
+Package Control.user-ca-bundle
+oscrypto-ca-bundle.crt
+bh_unicode_properties.cache
+
+# Sublime-github package stores a github token in this file
+# https://packagecontrol.io/packages/sublime-github
+GitHub.sublime-settings
 
 ### Vim ###
 # Swap
@@ -353,6 +441,19 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
 
 ### Windows ###
 # Windows thumbnail cache files
@@ -380,4 +481,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim,tex
+# End of https://www.toptal.com/developers/gitignore/api/linux,macos,windows,vim,emacs,visualstudiocode,sublimetext,latex
