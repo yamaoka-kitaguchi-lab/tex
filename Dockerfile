@@ -1,4 +1,4 @@
-FROM archlinux:base-20210516.0.23009
+FROM archlinux
 
 ARG tlmgr="/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode"
 
