@@ -6,6 +6,7 @@ RUN pacman -Syy --noconfirm \
  && pacman -S --noconfirm \
         texlive-bin \
         texlive-core \
+        texlive-science \
         texlive-langjapanese \
         ghostscript \
         imagemagick \
