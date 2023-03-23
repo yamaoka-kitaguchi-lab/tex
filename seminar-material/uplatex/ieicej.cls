@@ -606,13 +606,13 @@
  \fi
  \if@rinkou
   \def\@oddfoot{\@Lbot\hfill
-   {\small{\bfseries 山岡・北口研究室 全体輪講}\hskip1zw
+   {\small{\bfseries 山岡研究室 全体輪講}\hskip1zw
     \foot@font \ft@year {\bfseries 年}\@no {\bfseries 月} \@day {\bfseries 日}}\hfill
      \llap{{\nombre@font\thepage\hskip1zw}}%
    \@Rbot}%
   \def\@evenfoot{\@Lbot
    \rlap{\hskip1zw{\nombre@font\thepage}}\hfill
-    {\small{\bfseries 山岡・北口研究室全体輪講}\hskip1zw 
+    {\small{\bfseries 山岡研究室全体輪講}\hskip1zw 
      \foot@font \ft@year {\bfseries 年}\@no {\bfseries 月} \@day {\bfseries 日}}\hfill
    \@Rbot}%
  \else
