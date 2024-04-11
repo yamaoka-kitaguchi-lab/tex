@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $latex           = 'uplatex -synctex=1 %S';
+# $latex           = 'uplatex -synctex=1 %O %S';
 $latex             = 'platex -synctex=1 -halt-on-error %O %S';
 $dvipdf            = 'dvipdfmx %O -o %D %S';
 $bibtex            = 'pbibtex';
