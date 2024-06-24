@@ -1,0 +1,9 @@
+services:
+  seminar-tex:
+    container_name: seminar-tex
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/workspace
+    working_dir: /workspace
