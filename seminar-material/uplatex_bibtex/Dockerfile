@@ -1,4 +1,4 @@
-# FROM ubuntu:24.04
+# FROM debian:12-slim
 
 # WORKDIR /install
 
@@ -7,15 +7,17 @@
 
 # RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
 #     && tar xzf ./install-tl-unx.tar.gz  --strip-components 1 \
-#     && ./install-tl -scheme base --no-interaction \
+#     && ./install-tl -scheme basic --no-interaction \
 #     && ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
+
+# RUN rm -r ./**/*
 
 # ENV PATH /usr/local/bin/texlive:$PATH
 
-# RUN tlmgr install collection-fontsrecommended collection-langjapanese collection-latexextra latexmk bbding
+# RUN tlmgr install collection-fontsrecommended collection-langjapanese collection-latexextra latexmk bbding collection-latexrecommended collection-mathscience
 
-# ↓ 上記の内容を含むイメージです
+# 上記の内容を含むイメージです ↓ 
 FROM ghcr.io/yamaoka-kitaguchi-lab/seminar-tex:latest
 
 # カスタムパッケージをインストールしたい場合、ここに追加
-# RUN tlmgr install <package-name>
+# RUN tlmgr install <package-name> 
