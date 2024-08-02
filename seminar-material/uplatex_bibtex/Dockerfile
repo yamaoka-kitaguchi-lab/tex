@@ -12,7 +12,7 @@
 
 # RUN rm -r ./**/*
 
-# ENV PATH /usr/local/bin/texlive:$PATH
+# ENV PATH=/usr/local/bin/texlive:$PATH
 
 # RUN tlmgr install collection-fontsrecommended collection-langjapanese collection-latexextra latexmk bbding collection-latexrecommended collection-mathscience
 
