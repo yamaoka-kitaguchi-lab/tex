@@ -2,10 +2,12 @@
 
 # WORKDIR /install
 
-# RUN apt-get update && apt-get install -y \
-#     perl wget xz-utils fontconfig 
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     perl wget xz-utils fontconfig ca-certificates \
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/*
 
-# RUN wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
+# RUN wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz \
 #     && tar xzf ./install-tl-unx.tar.gz  --strip-components 1 \
 #     && ./install-tl -scheme basic --no-interaction \
 #     && ln -sf /usr/local/texlive/*/bin/* /usr/local/bin/texlive
