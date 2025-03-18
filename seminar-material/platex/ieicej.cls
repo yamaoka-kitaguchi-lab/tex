@@ -1628,24 +1628,50 @@
  \def\keyword{\parindent\z@
   \hspace*{1zw}{\bfseries キーワード\hskip1zw}\ignorespaces}
  \def\endkeyword{\par}
-\else
+
+ \def\eabstract{\parindent\z@
+  \hspace*{1zw}{\bfseries Abstract\hskip1zw}\ignorespaces}
+ \def\endeabstract{\par\ignorespaces}
+
+ \def\ekeyword{\parindent\z@
+  \hspace*{1zw}{\bfseries Keywords\hskip1zw}\ignorespaces}
+ \def\endekeyword{\par}
+
+ \else
  \newbox\abstractbox
  \newbox\keywordbox
+ \newbox\eabstractbox
+ \newbox\ekeywordbox
+
  \def\abstract{\global\setbox\abstractbox=\hbox\bgroup
   \begin{minipage}[t]{137.5mm}%11Q 50zw
-   \Small\hskip1zw{\bfseries あらまし\hskip1zw}\ignorespaces}
+  \Small\hskip1zw{\bfseries あらまし\hskip1zw}\ignorespaces}
  \def\endabstract{\end{minipage}\egroup}
 
  \def\keyword{\global\setbox\keywordbox=\hbox\bgroup
   \begin{minipage}[t]{137.5mm}%11Q 50zw
-   \Small\hskip1zw{\bfseries キーワード\hskip1zw}\ignorespaces}
+  \Small\hskip1zw{\bfseries キーワード\hskip1zw}\ignorespaces}
  \def\endkeyword{\end{minipage}\egroup}
+
+ \def\eabstract{\global\setbox\eabstractbox=\hbox\bgroup
+  \begin{minipage}[t]{137.5mm}%11Q 50zw
+  \Small\hskip1zw{\bfseries Abstract\hskip1zw}\ignorespaces}
+ \def\endeabstract{\end{minipage}\egroup}
+
+ \def\ekeyword{\global\setbox\ekeywordbox=\hbox\bgroup
+  \begin{minipage}[t]{137.5mm}%11Q 50zw
+  \Small\hskip1zw{\bfseries Keywords\hskip1zw}\ignorespaces}
+ \def\endekeyword{\end{minipage}\egroup}
 \fi
 
 \let\jabstract\abstract
 \let\endjabstract\endabstract
 \let\jkeyword\keyword
 \let\endjkeyword\endkeyword
+\let\eabstract\eabstract
+\let\endeabstract\endeabstract
+\let\ekeyword\ekeyword
+\let\endekeyword\endekeyword
 
 \newdimen\Lauthorsep
 %% \Lauthorsep 4.125mm % 11Qx1.5zw
@@ -1877,9 +1903,12 @@
       \@outputEauthorlist}\par
     }%
     \vskip35\@Q
-    \hfill\box\abstractbox\par
+    % \hfill\box\abstractbox\par
+    % \vskip4\@Q
+    % \hfill\box\keywordbox
+    \hfill\box\eabstractbox\par
     \vskip4\@Q
-    \hfill\box\keywordbox
+    \hfill\box\ekeywordbox
   \end{minipage}%
  }%
   \@tempdima\ht\@tempboxa
@@ -1930,9 +1959,12 @@
     }%
     \nointerlineskip
     \vskip23\@Q
-    \hfill\box\abstractbox\par
+    % \hfill\box\abstractbox\par
+    % \vskip3\@Q
+    % \hfill\box\keywordbox\par
+    \hfill\box\eabstractbox\par
     \vskip3\@Q
-    \hfill\box\keywordbox\par
+    \hfill\box\ekeywordbox\par
   \end{minipage}%
  }%
   \@tempdima\ht\@tempboxa
